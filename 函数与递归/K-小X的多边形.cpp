@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<double> x(n), y(n);
+    for (int i = 0; i < n; i++) {
+        cin >> x[i] >> y[i];
+    }
+    double area = 0.0;
+    for (int i = 0; i < n; i++) {
+        int j = (i + 1) % n;  
+        area += x[i] * y[j] - x[j] * y[i];
+    }
+    area = abs(area) / 2.0;
+    cout << static_cast<int>(area + 0.5) << endl;
+    return 0;
+}
